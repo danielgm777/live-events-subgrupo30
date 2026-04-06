@@ -1,0 +1,19 @@
+<section class="evento">
+    <h1>Descubre los mejores eventos</h1>
+    <p>Conciertos, festivales y experiencias únicas en un solo lugar</p>
+</section>
+
+<section class="destacados">
+    <h2>Eventos destacados</h2>
+
+    <div class="cards">
+        <app-evento-component *ngFor="let evento of eventos" [tituloEvento]="evento.titulo"
+            [imagenEvento]="evento.imagen">
+        </app-evento-component>
+    </div>
+</section>
+
+<section class="cta">
+    <h3>¿Listo para vivir la experiencia?</h3>
+    <button routerLink="/eventos">Ver eventos ahora</button>
+</section>

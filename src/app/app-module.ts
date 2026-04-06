@@ -1,20 +1,19 @@
-import { NgModule, provideBrowserGlobalErrorListeners } from '@angular/core';
+import { NgModule } from '@angular/core';
+import { LayoutModule } from './layout/layout-module'
+import { AppComponent } from './app';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing-module';
-import { App } from './app';
+import { ContactoComponent } from './features/contacto/contacto-component/contacto-component';
 
 @NgModule({
   declarations: [
-    App
+    AppComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    LayoutModule
   ],
-  providers: [
-    provideBrowserGlobalErrorListeners()
-  ],
-  bootstrap: [App]
+  bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
