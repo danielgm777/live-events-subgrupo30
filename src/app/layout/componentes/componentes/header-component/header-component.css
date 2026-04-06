@@ -1,0 +1,70 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 10px 20px;
+  border-bottom: 2px solid #000;
+  position: relative;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* NAV en computador de escritorio */
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #1a1a1a;
+  font-size: 16px;
+  padding: 4px 6px;
+}
+
+.nav a.active {
+  background-color: #bfbfbf;
+  border-radius: 3px;
+}
+
+/* NAV tipo hamburguesa (recogido) */
+.menu-toggle {
+  display: none;
+  font-size: 26px;
+  cursor: pointer;
+}
+
+/* Código para hacerlo responsive */
+@media (max-width: 768px) {
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: #d9d9d9;
+    flex-direction: column;
+    width: 200px;
+    padding: 10px;
+    border: 1px solid #000;
+    display: none;
+  }
+
+  .nav.open {
+    display: flex;
+  }
+
+  .nav a {
+    padding: 10px;
+    width: 100%;
+  }
+}

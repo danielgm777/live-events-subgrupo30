@@ -1,0 +1,17 @@
+<header class="header">
+  <div class="logo" routerLink="/home">
+    LiveEvents
+  </div>
+
+  <div class="menu-toggle" (click)="activarmenu()">
+    ☰
+  </div>
+
+  <nav class="nav" [class.open]="abrirMenu">
+    <a routerLink="/home" routerLinkActive="active" (click)="cerrarMenu()">Home</a>
+    <a routerLink="/eventos" routerLinkActive="active" (click)="cerrarMenu()">Eventos</a>
+    <a routerLink="/favoritos" routerLinkActive="active" (click)="cerrarMenu()">Favoritos</a>
+    <a routerLink="/contacto" routerLinkActive="active" (click)="cerrarMenu()">Contacto</a>
+    <!-- <a routerLink="/perfil" routerLinkActive="active" (click)="cerrarMenu()">Perfil</a> -->
+  </nav>
+</header>
