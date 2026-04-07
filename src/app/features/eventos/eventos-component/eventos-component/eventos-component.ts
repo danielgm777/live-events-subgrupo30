@@ -9,15 +9,22 @@ import { Component } from '@angular/core';
 export class EventosComponent {
 
   eventos = [
-    { titulo: 'Concierto Rock', descripcion: 'Una noche llena de música en vivo.' },
-    { titulo: 'Festival Electrónico', descripcion: 'Los mejores DJs en un solo lugar.' },
-    { titulo: 'Evento Cultural', descripcion: 'Arte, cultura y tradición.' },
-    { titulo: 'Show de Comedia', descripcion: 'Ríe con los mejores comediantes.' },
-    { titulo: 'Festival Gastronómico', descripcion: 'Sabores únicos para disfrutar.' },
-    { titulo: 'Concierto Pop', descripcion: 'Los artistas del momento en vivo.' }
+    { titulo: 'Concierto Rock', descripcion: 'Una noche llena de música en vivo.', imagen: ''},
+    { titulo: 'Festival Electrónico', descripcion: 'Los mejores DJs en un solo lugar.', imagen: ''},
+    { titulo: 'Evento Cultural', descripcion: 'Arte, cultura y tradición.', imagen: '' },
+    { titulo: 'Show de Comedia', descripcion: 'Ríe con los mejores comediantes.', imagen: '' },
+    { titulo: 'Festival Gastronómico', descripcion: 'Sabores únicos para disfrutar.', imagen: '' },
+    { titulo: 'Concierto Pop', descripcion: 'Los artistas del momento en vivo.', imagen: '' }
   ];
 
+  ngOnInit() {
+    this.eventos = this.eventos.map(e => ({
+      ...e,
+      imagen: this.getImagenRandom()
+    }));
+  }
+
   getImagenRandom() {
-    return 'https://loremflickr.com/600/400/music?random=' + Math.random();
+    return 'https://loremflickr.com/400/600/music?random=' + Math.random();
   }
 }

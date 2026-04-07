@@ -1,0 +1,19 @@
+<div class="container mt-4">
+  <h2 class="mb-4">Mis favoritos</h2>
+
+  <div class="row">
+    <div 
+      class="col-12 col-sm-6 col-md-4 mb-4"
+      *ngFor="let evento of favoritos">
+
+      <app-evento-component
+        [tituloEvento]="evento.titulo"
+        [descripcionEvento]="evento.descripcion"
+        [imagenEvento]="evento.imagen"
+        [esFavorito]="true"
+        (eliminarEvento)="eliminar(evento.titulo)">
+      </app-evento-component>
+
+    </div>
+  </div>
+</div>
