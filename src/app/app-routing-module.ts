@@ -27,6 +27,12 @@ const routes: Routes = [
             .then(m => m.ContactoModule)
       },
       {
+        path: 'favoritos',
+        loadChildren: () =>
+          import('./features/favoritos/favoritos/favoritos-module')
+            .then(m => m.FavoritosModule)
+      },
+      {
         path: '',
         redirectTo: 'home',
         pathMatch: 'full'

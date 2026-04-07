@@ -1,15 +1,18 @@
 <div class="card h-100 shadow-sm">
-  <img 
-    [src]="imagenEvento" 
-    class="card-img-top img-fixed" 
-    alt="evento">
+  <img [src]="imagenEvento" class="card-img-top img-fixed" alt="evento">
 
   <div class="card-body d-flex flex-column">
     <h5 class="card-title">{{ tituloEvento }}</h5>
     <p class="card-text">{{ descripcionEvento }}</p>
 
-    <button class="btn btn-outline-dark mt-auto">
+    <button class="btn btn-outline-dark mt-auto" (click)="verMas()" type="button">
       Ver más
     </button>
+
+    @if (esFavorito) {
+    <button class="btn btn-danger mt-2 text-dark" (click)="eliminar()" type="button">
+      Eliminar evento
+    </button>
+    }
   </div>
 </div>
