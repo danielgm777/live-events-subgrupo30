@@ -12,6 +12,21 @@ h1 {
   gap: 15px;
 }
 
+.crear-card {
+  border: 2px dashed #999;
+  transition: 0.2s ease;
+}
+
+.crear-card:hover {
+  background-color: #f8f9fa;
+  transform: scale(1.02);
+}
+
+.crear-img {
+  height: 220px; /* mismo tamaño que las imágenes */
+  background-color: #f1f1f1;
+}
+
 /* Código para hacerlo responsive */
 @media (max-width: 900px) {
   .grid {

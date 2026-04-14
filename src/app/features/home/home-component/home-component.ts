@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { EventosService } from '../../../core/servicios/eventos.services';
 
 @Component({
   selector: 'app-home-component',
@@ -6,19 +7,14 @@ import { Component } from '@angular/core';
   templateUrl: './home-component.html',
   styleUrl: './home-component.css',
 })
-export class HomeComponent {
-  eventos = [
-    {
-      titulo: 'Concierto Rock',
-      imagen: 'https://loremflickr.com/600/400/rock,band'
-    },
-    {
-      titulo: 'Festival electrónico',
-      imagen: 'https://loremflickr.com/600/400/music'
-    },
-    {
-      titulo: 'Evento Cultural',
-      imagen: 'https://loremflickr.com/600/400/band'
-    }
-  ];
+
+export class HomeComponent implements OnInit {
+
+  eventos: any[] = [];
+
+  constructor(private eventosService: EventosService) {}
+
+  ngOnInit() {
+    this.eventos = this.eventosService.getEventos().slice(0, 3);
+  }
 }

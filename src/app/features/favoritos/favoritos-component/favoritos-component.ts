@@ -11,14 +11,14 @@ export class FavoritosComponent {
 
   favoritos: any[] = [];
 
-  constructor(private favoritosService: FavoritosService) {}
+  constructor(private favoritosService: FavoritosService) { }
 
   ngOnInit() {
     this.favoritos = this.favoritosService.getFavoritos();
   }
 
-  eliminar(titulo: string) {
-    this.favoritosService.eliminarFavorito(titulo);
+  eliminar(id: number) {
+    this.favoritosService.eliminarFavorito(id);
     this.favoritos = this.favoritosService.getFavoritos();
   }
 }

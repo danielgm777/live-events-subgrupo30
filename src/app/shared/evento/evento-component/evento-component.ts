@@ -8,21 +8,27 @@ import { Router } from '@angular/router';
   styleUrls: ['./evento-component.css'],
 })
 export class EventoComponent {
-  @Input() tituloEvento: string = '';
-  @Input() descripcionEvento: string = '';
-  @Input() imagenEvento: string = '';
+  @Input() evento: any;
   @Input() esFavorito: boolean = false;
-  @Output() eliminarEvento = new EventEmitter<void>();
+  @Input() mostrarEliminar: boolean = false;
+  @Output() eliminarEvento = new EventEmitter<number>();
 
   constructor(private router: Router) {
 
   }
 
   verMas() {
-    this.router.navigate(['/eventos', this.tituloEvento]);
+    console.log('Evento recibido:', this.evento);
+
+    if (!this.evento?.id) {
+      console.error('Evento sin ID', this.evento);
+      return;
+    }
+
+    this.router.navigate(['/eventos', this.evento.id]);
   }
 
   eliminar() {
-    this.eliminarEvento.emit();
+    this.eliminarEvento.emit(this.evento.id);
   }
 }

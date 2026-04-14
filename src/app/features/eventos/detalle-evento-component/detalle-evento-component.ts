@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FavoritosService } from '../../../core/servicios/favoritos.services';
+import { EventosService } from '../../../core/servicios/eventos.services';
 
 declare var bootstrap: any;
 
@@ -16,22 +17,19 @@ export class DetalleEventoComponent {
 
   constructor(
     private route: ActivatedRoute,
+    private eventosService: EventosService,
     private router: Router,
     private favoritosService: FavoritosService
   ) { }
 
   ngOnInit() {
-    const id = this.route.snapshot.paramMap.get('id');
+    const id = Number(this.route.snapshot.paramMap.get('id'));
 
-    // Simulación (luego puedes traerlo de backend)
-    this.evento = {
-      titulo: id,
-      fecha: '20 de abril de 2026',
-      lugar: 'Bogotá, Colombia',
-      precio: '$80.000',
-      descripcion: 'Disfruta de una noche inolvidable con las mejores bandas de rock en vivo. Un evento lleno de energía, música y una experiencia única.',
-      imagen: 'https://loremflickr.com/600/800/music?random=1'
-    };
+    this.evento = this.eventosService.getEventoById(id);
+
+    if (!this.evento) {
+      console.error('Evento no encontrado');
+    }
   }
 
   contactar() {
