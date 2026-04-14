@@ -1,0 +1,1 @@
+import{i}from"./chunk-5ME4ARBX.js";import{aa as m,ia as e,j as r,x as t}from"./chunk-G3WJQSPY.js";var n=class o{static \u0275fac=function(p){return new(p||o)};static \u0275mod=t({type:o});static \u0275inj=r({imports:[m,e,i]})};export{n as a};
