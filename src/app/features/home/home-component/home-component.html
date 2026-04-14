@@ -6,11 +6,11 @@
 <section class="destacados">
     <h2>Eventos destacados</h2>
 
-    <div class="cards">
-        <app-evento-component *ngFor="let evento of eventos" [tituloEvento]="evento.titulo"
-            [imagenEvento]="evento.imagen">
-        </app-evento-component>
-    </div>
+    <<div class="row">
+        <div class="col-md-4 mb-4" *ngFor="let evento of eventos">
+            <app-evento-component [evento]="evento"></app-evento-component>
+        </div>
+        </div>
 </section>
 
 <section class="cta">
