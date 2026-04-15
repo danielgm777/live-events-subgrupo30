@@ -37,18 +37,22 @@ export class DetalleEventoComponent {
   }
 
   reservar() {
-    const modal = new bootstrap.Modal(
-      document.getElementById('modalReserva')
-    );
-    modal.show();
+    const modal = document.getElementById('modalReserva');
+
+    if (modal) {
+
+      console.log('encontró el modal');
+      const instancia = new bootstrap.Modal(modal);
+      instancia.show();
+    }
   }
 
   ir_a_Home() {
-    const modalElement = document.getElementById('modalReserva');
-    const modalInstance = bootstrap.Modal.getInstance(modalElement);
+    const modal = document.getElementById('modalReserva');
+    const instancia = bootstrap.Modal.getInstance(modal);
 
-    if (modalInstance) {
-      modalInstance.hide();
+    if (instancia) {
+      instancia.hide();
     }
 
     document.querySelectorAll('.modal-backdrop').forEach(el => el.remove());
