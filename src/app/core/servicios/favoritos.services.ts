@@ -16,6 +16,7 @@ export class FavoritosService {
     return this.favoritos;
   }
 
+  //Agrega un evento a la pantalla de favoritos
   agregarFavorito(evento: any) {
     const existe = this.favoritos.find(e => e.id === evento.id);
 
@@ -24,7 +25,8 @@ export class FavoritosService {
       localStorage.setItem('favoritos', JSON.stringify(this.favoritos));
     }
   }
-
+  
+  //Elimina un evento de la pantalla de favoritos
   eliminarFavorito(id: number) {
     this.favoritos = this.favoritos.filter(e => e.id !== id);
     localStorage.setItem('favoritos', JSON.stringify(this.favoritos));

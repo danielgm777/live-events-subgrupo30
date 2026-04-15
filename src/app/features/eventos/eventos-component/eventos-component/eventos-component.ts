@@ -28,6 +28,7 @@ export class EventosComponent {
     this.cargarEventos();
   }
 
+  // Método para obtener una imagen aleatoria
   getImagenRandom() {
     return 'https://loremflickr.com/400/600/music?random=' + Math.random();
   }

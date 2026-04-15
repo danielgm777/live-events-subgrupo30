@@ -9,7 +9,7 @@ export class EventosService {
     this.inicializarEventos();
   }
 
-
+  //Servicio para inicializar los eventos. Si hay eventos en memoria muestra esos, si no muestra unos predeterminados
   private inicializarEventos(): void {
     const data = localStorage.getItem('eventos');
 
@@ -19,7 +19,7 @@ export class EventosService {
     }
   }
 
- 
+ //Eventos predeterminados
   private getEventosIniciales(): any[] {
     return [
       {
@@ -52,7 +52,7 @@ export class EventosService {
     ];
   }
 
-
+  //Obtiener los eventos, si hay eventos en memoria los muestra, si no toma los predeterminados
   getEventos(): any[] {
     let eventos = JSON.parse(localStorage.getItem('eventos') || '[]');
 
@@ -65,13 +65,13 @@ export class EventosService {
     return eventos;
   }
 
- 
+ //Obtener el evento por id
   getEventoById(id: number): any {
     const eventos = this.getEventos();
     return eventos.find((e: any) => e.id === id);
   }
 
-
+  //Crea un evento
   agregarEvento(evento: any): void {
     const eventos = this.getEventos();
 
@@ -81,7 +81,7 @@ export class EventosService {
     localStorage.setItem('eventos', JSON.stringify(eventos));
   }
 
-  
+  //Elimina un evento
   eliminarEvento(id: number): void {
     const eventos = this.getEventos().filter((e: any) => e.id !== id);
 
