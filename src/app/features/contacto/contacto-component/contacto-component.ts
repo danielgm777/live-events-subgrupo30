@@ -17,6 +17,8 @@ export class ContactoComponent {
   tituloModal: string = '';
   mensajeModal: string = '';
 
+  //Método que se dispara al dar clic en el botón de enviar. Valida que los campos no estén vacíos 
+  // y muestra un modal con el resultado
   enviarFormulario() {
 
     if (!this.nombre || !this.correo || !this.mensaje) {
@@ -36,6 +38,7 @@ export class ContactoComponent {
     this.mensaje = '';
   }
 
+  //Método para mostrar el modal
   mostrarModal() {
     const modal = new bootstrap.Modal(
       document.getElementById('modalMensaje')

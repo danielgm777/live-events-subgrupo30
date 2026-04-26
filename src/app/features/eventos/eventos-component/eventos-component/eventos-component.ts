@@ -20,6 +20,7 @@ export class EventosComponent {
     { titulo: 'Concierto Pop', descripcion: 'Los artistas del momento en vivo.', imagen: '', id: 6 }
   ];
 
+  // Método que se ejecuta al cargar el componente. Asigna una imagen aleatoria a cada evento y carga los eventos desde el servicio.
   ngOnInit() {
     this.eventos = this.eventos.map(e => ({
       ...e,
@@ -33,14 +34,17 @@ export class EventosComponent {
     return 'https://loremflickr.com/400/600/music?random=' + Math.random();
   }
 
+  // Método que se dispara al dar clic en crear un evento. Redirige a la pantalla de creación de eventos.
   irACrearEvento() {
     this.router.navigate(['/eventos/crear']);
   }
 
+  //Método para cargar los eventos. LLama al servicio que obtiene los eventos.
   cargarEventos() {
     this.eventos = this.eventosService.getEventos();
   }
 
+  //Método que se dispara al dar clic en eliminar evento. LLama al servicio que elimina el vento y recarga los eventos.
   eliminar(id: number) {
     this.eventosService.eliminarEvento(id);
     this.eventos = this.eventosService.getEventos();

@@ -23,6 +23,7 @@ export class CrearEventoComponent {
     private router: Router
   ) { }
 
+  //Método para guardar la imagen del evento. Se guarda sólo la URL de la imagen.
   onFileChange(event: any) {
     const file = event.target.files[0];
 
@@ -30,13 +31,14 @@ export class CrearEventoComponent {
       const reader = new FileReader();
 
       reader.onload = () => {
-        this.evento.imagen = reader.result; // 👈 base64
+        this.evento.imagen = reader.result; 
       };
 
       reader.readAsDataURL(file);
     }
   }
 
+  //Método para crear un evento. Valida que el formulario sea válido y si es valído llama al servicio que agrega los eventos.
   crearEvento(form: any) {
 
     if (form.invalid || !this.evento.imagen) {
