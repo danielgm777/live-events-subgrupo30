@@ -22,6 +22,8 @@ export class DetalleEventoComponent {
     private favoritosService: FavoritosService
   ) { }
 
+
+  //Método que se ejecuta al cargar el componente. Si el evento existe, lo muestra, si no, muestra un error en consola.
   ngOnInit() {
     const id = Number(this.route.snapshot.paramMap.get('id'));
 
@@ -32,10 +34,12 @@ export class DetalleEventoComponent {
     }
   }
 
+  //Método que se dispara al dar clic en el botón contactar. Redirige a la pantalla de contáctenos.
   contactar() {
     this.router.navigate(['/contacto']);
   }
 
+  //Método que se dispara al dar clic en el botón reservar. Muestra un modal de confirmación.
   reservar() {
     const modal = document.getElementById('modalReserva');
 
@@ -47,6 +51,7 @@ export class DetalleEventoComponent {
     }
   }
 
+  //Método que se dispara al dar clic en el botón de confirmar reserva. Cierra el modal y redirige a la pantalla de inicio.
   ir_a_Home() {
     const modal = document.getElementById('modalReserva');
     const instancia = bootstrap.Modal.getInstance(modal);
@@ -61,6 +66,7 @@ export class DetalleEventoComponent {
     this.router.navigate(['/home']);
   }
 
+  //Método que se dispara al dar clic en el botón de agregar a favoritos. Agrega el evento a la pantalla de favoritos.
   agregarAFavoritos() {
     this.favoritosService.agregarFavorito(this.evento);
   }

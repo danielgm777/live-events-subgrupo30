@@ -13,10 +13,12 @@ export class FavoritosComponent {
 
   constructor(private favoritosService: FavoritosService) { }
 
+  //Método que se ejecuta al cargar el componente. Carga los eventos favoritos desde el servicio.
   ngOnInit() {
     this.favoritos = this.favoritosService.getFavoritos();
   }
 
+  //Método que se dispara al dar clic en eliminar favorito. Llama al servicio que elimina el favorito y recarga los favoritos.
   eliminar(id: number) {
     this.favoritosService.eliminarFavorito(id);
     this.favoritos = this.favoritosService.getFavoritos();

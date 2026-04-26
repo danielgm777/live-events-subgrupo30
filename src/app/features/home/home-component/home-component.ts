@@ -14,6 +14,7 @@ export class HomeComponent implements OnInit {
 
   constructor(private eventosService: EventosService) {}
 
+  // Método para cargar los eventos al iniciar el componente
   ngOnInit() {
     this.eventos = this.eventosService.getEventos().slice(0, 3);
   }

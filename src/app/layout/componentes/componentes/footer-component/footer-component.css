@@ -40,7 +40,7 @@
   text-decoration: underline;
 }
 
-/* Código para hacerlo responsive */
+/* mediaqueries para móviles*/
 @media (max-width: 768px) {
   .footer-container {
     flex-direction: column;

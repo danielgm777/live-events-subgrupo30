@@ -1,3 +1,4 @@
+/* se ajusta la posición de la imagen para que no choque con el header */
 .card {
   max-width: 500px;
   margin: auto;

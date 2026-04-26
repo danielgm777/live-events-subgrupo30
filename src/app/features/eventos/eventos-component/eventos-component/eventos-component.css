@@ -1,16 +1,20 @@
+/* Se agrega espaciado entre el div y el contenido dentro del div  */
 .container {
   padding: 20px;
 }
 
+/* Se agrega margen a los H1 */
 h1 {
   margin-bottom: 20px;
 }
 
+/* Se configura el espacio entre los elementos del grid */
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 15px;
 }
+
 
 .crear-card {
   border: 2px dashed #999;
@@ -23,11 +27,11 @@ h1 {
 }
 
 .crear-img {
-  height: 220px; /* mismo tamaño que las imágenes */
+  height: 220px;
   background-color: #f1f1f1;
 }
 
-/* Código para hacerlo responsive */
+/* media queries para dispositivos móviles */
 @media (max-width: 900px) {
   .grid {
     grid-template-columns: repeat(2, 1fr);

@@ -17,6 +17,7 @@ export class EventoComponent {
 
   }
 
+  //Método que se dispara al hacer clic en el botón "ver más" para navegar a su detalle
   verMas() {
     console.log('Evento recibido:', this.evento);
 
@@ -28,6 +29,7 @@ export class EventoComponent {
     this.router.navigate(['/eventos', this.evento.id]);
   }
 
+  // Método que se dispara al hacer clic en el botón "eliminar" para emitir el evento de eliminación
   eliminar() {
     this.eliminarEvento.emit(this.evento.id);
   }
